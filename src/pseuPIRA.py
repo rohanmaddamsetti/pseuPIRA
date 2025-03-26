@@ -119,6 +119,37 @@ def make_replicon_fasta_refs(genome_id, refgenome_gzpath, fasta_outdir):
     return
 
 
+def run_command_with_retry(command_string, tempdir=None, max_retries=3, timeout=20):
+    ## This code handles a bug in themisto build-- sometimes randomly hangs, have to delete temp files
+    ## and restart and then it usually works.
+    retries = 0
+    while retries < max_retries:
+        process = subprocess.Popen(command_string, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+        timer = threading.Timer(timeout, process.kill)  ## Kill process if it exceeds timeout
+
+        try:
+            timer.start()
+            stdout, stderr = process.communicate()
+        finally:
+            timer.cancel()
+
+        if process.returncode == 0:
+            print("Command succeeded:", stdout.decode())
+            return stdout.decode()
+        else:
+            print(f"*********COMMAND FAILED (attempt {retries + 1}):", stderr.decode())
+            if tempdir is not None: ## remove temporary files from the failed run.
+                print(f"removing {tempdir}")
+                subprocess.run(f"rm -rf {tempdir}", shell=True)
+                print(f"remaking {tempdir} before restarting")
+                os.mkdir(tempdir)
+            retries += 1
+            time.sleep(0.1)  ## Small delay before retrying
+    
+    print("Command failed after maximum retries.")
+    return
+
+
 def build_genome_index(genome_id, ref_fasta_dir, genome_index_dir, nthreads="4"):
     
     ## make sure that this path is real.
@@ -140,7 +171,11 @@ def build_genome_index(genome_id, ref_fasta_dir, genome_index_dir, nthreads="4")
 
     themisto_build_args = ["themisto", "build", "-k","31", "-i", index_input_filelist, "--index-prefix", index_prefix, "--temp-dir", tempdir, "--mem-gigas", "4", "--n-threads", nthreads, "--file-colors"]
     themisto_build_string = " ".join(themisto_build_args)
-    subprocess.run(themisto_build_string, shell=True)
+
+    print(themisto_build_string)
+    ## if themisto build hangs for a long time, then kill and restart.
+    run_command_with_retry(themisto_build_string, tempdir)
+
     return
 
 
