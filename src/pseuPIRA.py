@@ -21,7 +21,8 @@ import argparse ## for command-line interface.
 """
 TODO list:
 
-1) fix my polars dataframe code style to use parentheses, and start lines with ".join" and so forth.
+1) Use ChatGPT to reformat code:
+fix my polars dataframe code style to use parentheses, and start lines with ".join" and so forth.
 Example:
 
 filtered_df = (
@@ -34,7 +35,7 @@ filtered_df = (
       .drop("AllTrue")
 )
 
-3) clean up code to be consistent throughout in the use of
+2) clean up code to be consistent throughout in the use of
 AnnotationAccessions, RefSeq_IDs, and/or 'AnnotationAccession_genomic' as directory names.
 
 
