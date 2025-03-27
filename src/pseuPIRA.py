@@ -21,7 +21,9 @@ import argparse ## for command-line interface.
 """
 TODO list:
 
-1) fix my polars dataframe code style to use parentheses, and start lines with ".join" and so forth.
+1) pass the number of threads from -j command line argument to themisto and minimap2.
+
+2) fix my polars dataframe code style to use parentheses, and start lines with ".join" and so forth.
 Example:
 
 filtered_df = (
@@ -36,7 +38,6 @@ filtered_df = (
 
 3) clean up code to be consistent throughout in the use of
 AnnotationAccessions, RefSeq_IDs, and/or 'AnnotationAccession_genomic' as directory names.
-
 
 """
 
