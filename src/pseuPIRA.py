@@ -516,7 +516,7 @@ def make_PIRAGenomeDataFrame(
         my_naive_themisto_PCN_df):
     """ Make the DataFrame with the data needed for PIRA on a given genome.
         We have to update the results of the Naive PCN estimates from Themisto
-        (results of stage 16) by adding the additional replicon reads found by re-aligning multireads
+        (results of stage 5) by adding the additional replicon reads found by re-aligning multireads
         with minimap2.
     """
 
@@ -623,7 +623,7 @@ def initializePIRA(multiread_mapping_dict, themisto_ID_to_seq_metadata_dict, my_
     MatchMatrix = np.array(match_matrix_list_of_rows)
     
     """ Generate the DataFrame containing the ReadCounts,  replicon lengths, and initial PCN estimates.
-    We update the results of the Naive PCN estimates from Themisto (results of stage 16)
+    We update the results of the Naive PCN estimates from Themisto (results of stage 5)
     by adding the additional replicon reads found by re-aligning multireads
     with minimap2.
     """
@@ -646,7 +646,7 @@ def run_PIRA(M, PIRAGenomeDataFrame, epsilon = 0.00001):
     print()
 
     """
-    Stage 12 calls generate_replicon_fasta_reference_list_file_for_themisto(fasta_outdir), which
+    Stage 1 calls make_fasta_replicon_list_file(genome_id, fasta_outdir), which
     ensures that Themisto Replicon IDs are sorted by replicon length in descending order
     (i.e., Replicon ID == 0 corresponds to the longest chromosome).
 
