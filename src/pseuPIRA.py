@@ -14,6 +14,7 @@ from Bio import SeqIO
 from os.path import basename, exists
 import pprint
 import polars as pl
+import threading
 import HTSeq ## for filtering fastq multireads.
 import numpy as np ## for matrix multiplications for running PIRA.
 import argparse ## for command-line interface.
