@@ -16,7 +16,7 @@ pseuPIRA.py processes a gzipped GenBank reference file to extract replicon seque
    - Pseudoaligns sequencing reads (FASTQ format) to count how many reads map to each replicon.
 
 3. **Estimates Plasmid Copy Numbers (Naïve):**  
-   - Computes initial PCN estimates by normalizing read counts by replicon lengths.
+   - Computes initial PCN estimates as follows. First, we normalize read counts by replicon lengths to estimate replicon sequencing read coverage depth. Then, we divide plasmid read coverage depth by chromosome read coverage depth to estimate plasmid copy numbers (relative to chromosome copy number).
 
 4. **Refines PCN Estimates (PIRA):**  
    - Filters reads that map to multiple replicons.
