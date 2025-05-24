@@ -46,17 +46,20 @@ This project uses **uv** for dependency management and packaging, similar to Poe
 
 ### Getting Started with uv
 
-1. **Install uv:**
+1. **Install uv (https://docs.astral.sh/uv/getting-started/installation/):**
 
    ```bash
    pip install uv
    ```
 
+If this command does not work, see the official uv installation directions here:
+https://docs.astral.sh/uv/getting-started/installation/
+
 2. **Install Project Dependences:**
 In the project directory, run: 
 
   ```bash
-  uv install
+  uv sync
   ```
 This will install all the required dependencies as specified in the pyproject.toml.
 
