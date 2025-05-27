@@ -320,7 +320,7 @@ def naive_PCN_estimation(replicon_metadata_df, themisto_results_csv_file, naive_
     naive_themisto_read_count_df = pl.read_csv(themisto_results_csv_file).filter(
         (pl.col("SeqType") == "chromosome") | (pl.col("SeqType") == "plasmid")).join(
             replicon_metadata_df, on = "SeqID").with_columns(
-                (pl.col("ReadCount") / pl.col("replicon_length")).alias("SequencingCoverage"))
+                (pl.col("ReadCount").cast(pl.Float64) / pl.col("replicon_length").cast(pl.Float64)).alias("SequencingCoverage"))
     
     ## make a second dataframe containing just the sequencing coverage for the longest replicon for each genome.
     ## to do so, first group by AnnotationAccession and compute maximum replicon_length within each group.
@@ -598,7 +598,7 @@ def make_PIRAGenomeDataFrame(
                         ## sum those ReadCounts,
                         (pl.col("InitialReadCount") + pl.col("AdditionalReadCount")).alias("ReadCount")).with_columns(
                             ## and re-calculate SequencingCoverage,
-                            (pl.col("ReadCount") / pl.col("replicon_length")).alias("SequencingCoverage"))
+                            (pl.col("ReadCount").cast(pl.Float64) / pl.col("replicon_length").cast(pl.Float64)).alias("SequencingCoverage"))
     
     ## The following is a hack, following code in the function native_themisto_PCN_estimation(),
     ## to recalculate LongestRepliconCoverage and CopyNumber with the additional reads.
