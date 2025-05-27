@@ -31,9 +31,9 @@ pseuPIRA.py processes a gzipped GenBank reference file to extract replicon seque
   - `themisto` – must be installed and available in your `$PATH`
   - `minimap2` – must be installed and available in your `$PATH`  
 
-MacOS and Linux binaries for `themisto` are provided in the `bin/` directory.  
-A Linux binary for `minimap2` is provided in the `bin/` directory.  
-However, you may want to install them from github here:
+For convenience, MacOS and Linux binaries for `themisto` and a Linux binary
+for `minimap2` is provided in the `bin/` directory.  
+However, you may want to install them from github here:  
 [themisto](https://github.com/algbio/themisto)
 [minimap2](https://github.com/lh3/minimap2)
  
