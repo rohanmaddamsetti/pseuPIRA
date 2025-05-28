@@ -124,7 +124,7 @@ def make_replicon_fasta_refs(genome_id, refgenome_gzpath, fasta_outdir):
     return
 
 
-def run_command_with_retry(command_string, tempdir=None, max_retries=3, timeout=20):
+def run_command_with_retry(command_string, tempdir=None, max_retries=3, timeout=40):
     ## This code handles a bug in themisto build-- sometimes randomly hangs, have to delete temp files
     ## and restart and then it usually works.
     retries = 0
