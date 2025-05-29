@@ -31,13 +31,13 @@ pseuPIRA.py processes a gzipped GenBank reference file to extract replicon seque
   - [`themisto`](https://github.com/algbio/themisto/releases/) – must be installed and available in your `$PATH`
   - [`minimap2`](https://github.com/lh3/minimap2/releases) – must be installed and available in your `$PATH`  
 
-For convenience, MacOS and Linux binaries for `themisto` and a Linux binary for `minimap2` are provided in the `bin/` directory. You may have to turn these binaries into executables like so:
+    For convenience, MacOS and Linux binaries for `themisto` and a Linux binary for `minimap2` are provided in the `bin/` directory. You may have to turn these binaries into executables like so:
 
-```bash
-chmod +x ../bin/themisto_linux-v3.2.2/themisto  ##make the linux themisto binary into an executable
-```
+    ```bash
+    chmod +x ../bin/themisto_linux-v3.2.2/themisto  ##make the linux themisto binary int	o an executable
+    ```
     
-Alternatively, you can install themisto and minimap2 from github using the links above. Note that we have had difficulty compiling themisto from source. The v3.2.2 release works for us on MacOS and Linux.
+    Alternatively, you can install themisto and minimap2 from github using the links above. Note that we have had difficulty compiling themisto from source. The v3.2.2 release works for us on MacOS and Linux.
  
 
 - **Python Libraries:**  
