@@ -61,24 +61,25 @@ This project uses **uv** for dependency management and packaging, similar to Poe
    pip install uv
    ```
 
-If this command does not work, see the official uv installation directions here:
+   If this command does not work, see the official uv installation directions here:
 https://docs.astral.sh/uv/getting-started/installation/
 
 2. **Install Project Dependences:**
 In the project directory, run: 
 
-  ```bash
-  uv sync
+   ```bash
+   uv sync
   ```
-This will install all the required dependencies as specified in the pyproject.toml.
+  This will install all the required dependencies as specified in the pyproject.toml.
 
 3. **Activate the Virtual Environment:**
 uv automatically creates a virtual environment (in .venv/) during installation. To use it:
 
-```bash
-source .venv/bin/activate  # Linux/MacOS
-```
-Note: If you use uv run for executing scripts, it will automatically handle the environment. For manual execution (python file.py), activation ensures you're using the correct dependencies.
+   ```bash
+   source .venv/bin/activate  # Linux/MacOS
+   ```
+   
+   Note: If you use uv run for executing scripts, it will automatically handle the environment. For manual execution (python file.py), activation ensures you're using the correct dependencies.
 
 
 ## Usage 
