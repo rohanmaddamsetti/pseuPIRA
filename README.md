@@ -34,7 +34,7 @@ pseuPIRA.py processes a gzipped GenBank reference file to extract replicon seque
     For convenience, MacOS and Linux binaries for `themisto` and a Linux binary for `minimap2` are provided in the `bin/` directory. You may have to turn these binaries into executables like so:
 
     ```bash
-    chmod +x ../bin/themisto_linux-v3.2.2/themisto  ##make the linux themisto binary into an executable
+    chmod +x ${PWD}/bin/themisto_linux-v3.2.2/themisto  ##make the linux themisto binary into an executable
     ```
 
     Then, you can add these binaries to the `$PATH` from the command-line as follows, before running `pseuPIRA.py`:
