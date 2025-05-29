@@ -36,7 +36,13 @@ pseuPIRA.py processes a gzipped GenBank reference file to extract replicon seque
     ```bash
     chmod +x ../bin/themisto_linux-v3.2.2/themisto  ##make the linux themisto binary into an executable
     ```
-    
+
+    Then, you can add these binaries to the `$PATH` from the command-line as follows, before running `pseuPIRA.py`:
+
+    ```bash
+    export PATH="${PWD}/bin/themisto_linux-v3.2.2:$PATH"
+    ```
+
     Alternatively, you can install themisto and minimap2 from github using the links above. Note that we have had difficulty compiling themisto from source. The v3.2.2 release works for us on MacOS and Linux.
  
 
