@@ -917,7 +917,7 @@ def main():
 
     ## Make the output directory if it doesn't exist.
     if not exists(args.output):
-        os.mkdir(args.output)
+        os.makedirs(args.output)
 
     ## this is used as a standard prefix and ID for various files.
     genome_id = basename(args.reference).split(".gbff.gz")[0].strip("_genomic")
