@@ -219,6 +219,7 @@ def pseudoalign_reads(genome_id, index_dir, readpath_list, pseudoalignment_dir, 
     ## now run themisto pseudoalign.
     themisto_pseudoalign_args = ["themisto", "pseudoalign", "--query-file-list", seqdata_listfile, "--index-prefix", my_index_prefix, "--temp-dir", tempdir, "--out-file-list", output_listfile, "--n-threads", nthreads, "--threshold", "0.7"]
     themisto_pseudoalign_string = " ".join(themisto_pseudoalign_args)
+    print("Running the following command: \n", themisto_pseudoalign_string)
     subprocess.run(themisto_pseudoalign_string, shell=True)
     return
 
