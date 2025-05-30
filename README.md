@@ -76,7 +76,7 @@ In the project directory, run:
    ```
    uv sync
   ```
-  
+
   This will install all the required dependencies as specified in the pyproject.toml.
 
 3. **Activate the Virtual Environment:**
@@ -85,7 +85,7 @@ uv automatically creates a virtual environment (in .venv/) during installation. 
    ```
    source .venv/bin/activate  ## Linux/MacOS
    ```
-   
+
    Note: If you use uv run for executing scripts, it will automatically handle the environment. For manual execution (python file.py), activation ensures you're using the correct dependencies.
 
 
