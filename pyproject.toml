@@ -3,7 +3,7 @@ name = "pseupira"
 version = "0.1.0"
 description = "rapid plasmid copy number inference"
 readme = "README.md"
-requires-python = "=3.12.9"
+requires-python = "==3.12.9"
 dependencies = [
     "bio=1.85",
     "htseq=2.0.9",
