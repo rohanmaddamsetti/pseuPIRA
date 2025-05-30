@@ -75,7 +75,7 @@ In the project directory, run:
 
    ```
    uv sync
-  ```
+   ```
 
   This will install all the required dependencies as specified in the pyproject.toml.
 
