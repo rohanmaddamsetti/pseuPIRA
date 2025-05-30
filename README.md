@@ -147,7 +147,7 @@ Example data for testing pseuPIRA can be found in the `./data/RHBSTW-00316` dire
      `./data/RHBSTW-00316/SRR11948691.fastq.gz`
    - Save the reference genome file (e.g., `GCF_013742375.1_ASM1374237v1_genomic.gbff.gz`) to the `./data/RHBSTW-00316` directory.
 
-   Note that the reference genome file is already present in this github repository; however, the FASTQ test data *must* be downloaded as it is too large to store here.
+   Note that the reference genome file is already present in this github repository; **however, the FASTQ test data *must* be downloaded as it is too large to store here**.
 
 2. **Run pseuPIRA.py on the Example Data**:  
    Open a terminal in the project directory and execute:
