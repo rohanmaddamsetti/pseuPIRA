@@ -926,7 +926,7 @@ def main():
     ## validate fastq read data
     for cur_fastq_path in args.reads:
         assert os.path.exists(cur_fastq_path), "ERROR: some fastq read files do not exist on disk"
-        assert cur_fastq_path.endswith(".fastq") or cur.fastq_path.endswith(".fastq.gz"), "ERROR: non-fastq files supplied as arguments"
+        assert cur_fastq_path.endswith(".fastq") or cur_fastq_path.endswith(".fastq.gz"), "ERROR: non-fastq files supplied as arguments"
         
     ## this is used as a standard prefix and ID for various files.
     genome_id = basename(args.reference).split(".gbff.gz")[0].strip("_genomic")
