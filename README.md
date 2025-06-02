@@ -46,11 +46,12 @@ pseuPIRA.py processes a gzipped GenBank reference file to extract replicon seque
     Alternatively, you can install themisto and minimap2 from github using the links above. Note that we have had difficulty compiling themisto from source. The v3.2.2 release works for us on MacOS and Linux.
  
 
-- **Python Libraries:**  
-  - Biopython
-  - Polars==1.24.0 **IMPORTANT: there is a known bug where Polars 1.30.0 breaks PIRA code.**
-  - HTSeq
-  - NumPy
+- **Python Libraries:**
+  - Python==3.12.9
+  - Biopython==1.85
+  - Polars==1.24.0 **IMPORTANT: there is a known bug where Polars 1.30.0 breaks PIRA code. Please install Polars 1.24.0.**
+  - HTSeq==2.0.9 **Current version may trigger SyntaxWarnings in Python, but does not cause any errors. See: https://github.com/htseq/htseq/pull/105)**
+  - NumPy==2.2.3
   - argparse (standard library)
 
 ---
