@@ -2,7 +2,7 @@
 
 **pseuPIRA.py** is a pipeline for estimating plasmid copy number (PCN) from microbial genome sequencing data. It combines **themisto** for pseudoalignment and **minimap2** for multiread mapping. This project uses **uv** to manage dependencies and packaging.
 
-We thank Jia Lu and Zhengqing Zhou for extensive testing on the MIT computing cluster and the Duke Compute Cluster. Testing on MacOS done by Rohan Maddamsetti and Irida Shyti.
+We thank Jia Lu and Zhengqing Zhou for extensive testing on the MIT computing cluster and the Duke Compute Cluster (DCC). Testing on DCC and MacOS done by Rohan Maddamsetti and Irida Shyti.
 
 ---
 
