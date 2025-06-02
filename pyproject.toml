@@ -8,5 +8,5 @@ dependencies = [
     "biopython>=1.85",
     "htseq>=2.0.9",
     "numpy>=2.2.3",
-    "polars>=1.24.0",
+    "polars==1.24.0",
 ]

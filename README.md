@@ -48,7 +48,7 @@ pseuPIRA.py processes a gzipped GenBank reference file to extract replicon seque
 
 - **Python Libraries:**  
   - Biopython
-  - Polars
+  - Polars==1.24.0 **IMPORTANT: there is a known bug where Polars 1.30.0 breaks PIRA code.**
   - HTSeq
   - NumPy
   - argparse (standard library)
